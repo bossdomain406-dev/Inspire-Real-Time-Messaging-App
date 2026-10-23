@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0E2A6E;
+  --color-primary-dark: #081B47;
+  --color-accent: #FFD700;
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-input-bg: #F5F7FA;
+  --color-text: #000000;
+  --color-text-muted: #4B5563;
+  --color-border: #E5E7EB;
+  --color-success: #16A34A;
+  --color-danger: #DC2626;
+  --color-on-primary: #FFFFFF;
+  --color-on-accent: #1A1A2E;
+  --chat-sent-bg: #0E2A6E;
+  --chat-sent-text: #FFFFFF;
+  --chat-received-bg: #FFFFFF;
+  --chat-received-text: #000000;
+}
+
+[data-theme="dark"],
+.dark {
+  --color-primary: #3D6FE0;
+  --color-primary-dark: #1A4FBA;
+  --color-accent: #FFD700;
+  --color-bg: #0B0F1A;
+  --color-surface: #161B2B;
+  --color-input-bg: #1A2234;
+  --color-text: #F5F7FA;
+  --color-text-muted: #9CA3AF;
+  --color-border: #2A3348;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --color-on-primary: #FFFFFF;
+  --color-on-accent: #1A1A2E;
+  --chat-sent-bg: #254BA8;
+  --chat-sent-text: #FFFFFF;
+  --chat-received-bg: #161B2B;
+  --chat-received-text: #F5F7FA;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 42, 110, 0.2);
+  border-radius: 9999px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 1.4s infinite ease-in-out;
+}
